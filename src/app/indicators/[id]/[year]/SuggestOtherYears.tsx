@@ -44,6 +44,7 @@ export default function SuggestData({
 			Try these years instead:
 			{yearsWithData.map((year) => (
 				<Link
+					prefetch={false}
 					href={`/indicators/${indicator.id}/${year}#chart`}
 					key={year}
 					className="text-blue-500 hover:text-blue-800 ml-2"

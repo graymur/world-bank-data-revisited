@@ -22,6 +22,7 @@ export default function Home() {
 			<ul>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/indicators/NY.GDP.PCAP.CD/2016"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -30,6 +31,7 @@ export default function Home() {
 				</li>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/indicators/SM.POP.REFG.OR/2014"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -38,6 +40,7 @@ export default function Home() {
 				</li>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/indicators/SP.POP.TOTL/2015"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -46,6 +49,7 @@ export default function Home() {
 				</li>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/indicators/SH.STA.SUIC.P5/2015"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -54,6 +58,7 @@ export default function Home() {
 				</li>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/countries/US/indicator/FP.CPI.TOTL.ZG"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -62,6 +67,7 @@ export default function Home() {
 				</li>
 				<li className="mb-1">
 					<Link
+						prefetch={false}
 						href="/countries/CA/indicator/SP.POP.TOTL.FE.IN"
 						className="text-blue-500 hover:text-blue-800"
 					>
@@ -70,6 +76,7 @@ export default function Home() {
 				</li>
 				<li>
 					<Link
+						prefetch={false}
 						href="/countries/OM/indicator/GB.XPD.DEFN.GDP.ZS"
 						className="text-blue-500 hover:text-blue-800"
 					>
