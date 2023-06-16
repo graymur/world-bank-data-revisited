@@ -1,0 +1,162 @@
+[
+  {
+    "id": "EG.ELC.ACCS.ZS",
+    "name": "Access to electricity (% of population)"
+  },
+  {
+    "id": "SP.DYN.CBRT.IN",
+    "name": "Birth rate, crude (per 1,000 people)"
+  },
+  {
+    "id": "EN.ATM.CO2E.KT",
+    "name": "CO2 emissions (kt)"
+  },
+  {
+    "id": "EN.ATM.CO2E.PC",
+    "name": "CO2 emissions (metric tons per capita)"
+  },
+  {
+    "id": "GB.DOD.TOTL.GD.ZS",
+    "name": "Central government debt, total (% of GDP)"
+  },
+  {
+    "id": "BN.CAB.XOKA.CD",
+    "name": "Current account balance (BoP, current US$)"
+  },
+  {
+    "id": "FR.INR.DPST",
+    "name": "Deposit interest rate (%)"
+  },
+  {
+    "id": "EG.USE.ELEC.KH.PC",
+    "name": "Electric power consumption (kWh per capita)"
+  },
+  {
+    "id": "EG.USE.PCAP.KG.OE",
+    "name": "Energy use (kg of oil equivalent per capita)"
+  },
+  {
+    "id": "SP.DYN.TFRT.IN",
+    "name": "Fertility rate, total (births per woman)"
+  },
+  {
+    "id": "AG.LND.FRST.ZS",
+    "name": "Forest area (% of land area)"
+  },
+  {
+    "id": "EG.USE.COMM.FO.ZS",
+    "name": "Fossil fuel energy consumption (% of total)"
+  },
+  {
+    "id": "NY.GDP.MKTP.CD",
+    "name": "GDP (current US$)"
+  },
+  {
+    "id": "6.0.GDP_growth",
+    "name": "GDP growth (annual %)"
+  },
+  {
+    "id": "NY.GDP.PCAP.CD",
+    "name": "GDP per capita (current US$)"
+  },
+  {
+    "id": "NY.GDP.PCAP.KD.ZG",
+    "name": "GDP per capita growth (annual %)"
+  },
+  {
+    "id": "TX.VAL.TECH.CD",
+    "name": "High-technology exports (current US$)"
+  },
+  {
+    "id": "NE.IMP.GNFS.ZS",
+    "name": "Imports of goods and services (% of GDP)"
+  },
+  {
+    "id": "NV.IND.TOTL.ZS",
+    "name": "Industry, value added (% of GDP)"
+  },
+  {
+    "id": "FP.CPI.TOTL.ZG",
+    "name": "Inflation, consumer prices (annual %)"
+  },
+  {
+    "id": "SL.TLF.TOTL.IN",
+    "name": "Labor force, total"
+  },
+  {
+    "id": "AG.LND.TOTL.K2",
+    "name": "Land area (sq. km)"
+  },
+  {
+    "id": "FR.INR.LEND",
+    "name": "Lending interest rate (%)"
+  },
+  {
+    "id": "IP.PAT.RESD",
+    "name": "Patent applications, residents"
+  },
+  {
+    "id": "SP.POP.1564.TO.ZS",
+    "name": "Population ages 15-64 (% of total)"
+  },
+  {
+    "id": "SP.POP.GROW",
+    "name": "Population growth (annual %)"
+  },
+  {
+    "id": "SP.POP.TOTL.FE.IN",
+    "name": "Population, female"
+  },
+  {
+    "id": "SP.POP.TOTL.MA.IN",
+    "name": "Population, male"
+  },
+  {
+    "id": "SP.POP.TOTL",
+    "name": "Population, total"
+  },
+  {
+    "id": "SM.POP.REFG.OR",
+    "name": "Refugee population by country or territory of origin"
+  },
+  {
+    "id": "EG.FEC.RNEW.ZS",
+    "name": "Renewable energy consumption (% of total final energy consumption)"
+  },
+  {
+    "id": "SE.PRM.NENR",
+    "name": "School enrollment, primary (% net)"
+  },
+  {
+    "id": "DT.DOD.DSTC.IR.ZS",
+    "name": "Short-term debt (% of total reserves)"
+  },
+  {
+    "id": "SH.STA.SUIC.P5",
+    "name": "Suicide mortality rate (per 100,000 population)"
+  },
+  {
+    "id": "GC.TAX.TOTL.GD.ZS",
+    "name": "Tax revenue (% of GDP)"
+  },
+  {
+    "id": "SL.UEM.TOTL.MA.ZS",
+    "name": "Unemployment, male (% of male labor force) (modeled ILO estimate)"
+  },
+  {
+    "id": "SP.URB.TOTL",
+    "name": "Urban population"
+  },
+  {
+    "id": "SP.URB.TOTL.IN.ZS",
+    "name": "Urban population (% of total)"
+  },
+  {
+    "id": "DT.DOD.DIMF.CD",
+    "name": "Use of IMF credit (DOD, current US$)"
+  },
+  {
+    "id": "SM.POP.REFG",
+    "name": "Refugee population by country or territory of asylum"
+  }
+]
