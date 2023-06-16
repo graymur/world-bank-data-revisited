@@ -14,9 +14,15 @@ import { fetchIndicatorDataByYear } from '../../../../utils/dataSource'
 import Loader from '../../../../components/Loader'
 import SuggestOtherYears from './SuggestOtherYears'
 
-export default function IndicatorData({ indicator, year }) {
+export default function IndicatorData({
+	indicator,
+	year,
+}: {
+	indicator: Indicator
+	year: string
+}) {
 	const [loading, setLoading] = React.useState(true)
-	const [data, setData] = React.useState(null)
+	const [data, setData] = React.useState<IndicatorData[] | []>([])
 
 	React.useEffect(() => {
 		fetchIndicatorDataByYear(indicator.id, year).then((data) => {
@@ -57,6 +63,7 @@ export default function IndicatorData({ indicator, year }) {
 	)
 }
 
-function round(num, decimalPlaces = 2) {
+function round(num: string, decimalPlaces = 2) {
+	// @ts-ignore
 	return +(Math.round(num + `e+${decimalPlaces}`) + `e-${decimalPlaces}`)
 }

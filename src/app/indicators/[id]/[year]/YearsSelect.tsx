@@ -7,12 +7,21 @@ import { useRouter } from 'next/navigation'
 
 const years = range(1990, getMaxIndicatorYear() + 1).reverse()
 
-export default function YearsSelect({ currentYear, baseUrl }) {
+export default function YearsSelect({
+	currentYear,
+	baseUrl,
+}: {
+	currentYear: string
+	baseUrl: string
+}) {
 	const router = useRouter()
 
-	const handleYearChange = React.useCallback((e) => {
-		router.push(baseUrl + '/' + e.target.value)
-	}, [])
+	const handleYearChange = React.useCallback(
+		(e: React.ChangeEvent<HTMLSelectElement>) => {
+			router.push(baseUrl + '/' + e.target.value)
+		},
+		[],
+	)
 
 	return (
 		<select

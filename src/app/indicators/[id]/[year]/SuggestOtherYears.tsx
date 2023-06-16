@@ -5,10 +5,16 @@ import Link from 'next/link'
 import { fetchIndicatorDataByYear } from '../../../../utils/dataSource'
 import getYearForSuggestions from '../../../../utils/getYearForSuggestions'
 
-export default function SuggestData({ indicator, currentYear }) {
+export default function SuggestData({
+	indicator,
+	currentYear,
+}: {
+	indicator: Indicator
+	currentYear: string
+}) {
 	const years = getYearForSuggestions(currentYear)
-	const [_, setRandomValueToForceRerender] = React.useState(null)
-	const suggestions = React.useRef()
+	const [_, setRandomValueToForceRerender] = React.useState(Math.random())
+	const suggestions = React.useRef({})
 
 	if (!years.length) {
 		return null
@@ -18,7 +24,7 @@ export default function SuggestData({ indicator, currentYear }) {
 		years.forEach((year) => {
 			fetchIndicatorDataByYear(indicator.id, year).then((result) => {
 				suggestions.current = {
-					...suggestions.current,
+					...(suggestions.current || {}),
 					[year]: result,
 				}
 

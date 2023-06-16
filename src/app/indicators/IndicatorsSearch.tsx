@@ -2,17 +2,27 @@
 
 import React from 'react'
 
-export default function IndicatorsSearch({ setIndicators }) {
+export default function IndicatorsSearch({
+	setIndicators,
+}: {
+	setIndicators: (indicators: Indicator[]) => void
+}) {
 	const [searchString, setSearchString] = React.useState('')
 
-	const hadleSearchInputChange = React.useCallback((e) => {
-		setSearchString(e.target.value)
-	}, [])
+	const hadleSearchInputChange = React.useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			setSearchString(e.target.value)
+		},
+		[],
+	)
 
-	const hadleSearchButtonClick = React.useCallback((e) => {
-		alert(`Search ${searchString}`)
-		// setSearchString(e.target.value)
-	}, [])
+	const hadleSearchButtonClick = React.useCallback(
+		(e: React.MouseEvent<HTMLButtonElement>) => {
+			alert(`Search ${searchString}`)
+			// setSearchString(e.target.value)
+		},
+		[],
+	)
 
 	return (
 		<div className="mb-5">

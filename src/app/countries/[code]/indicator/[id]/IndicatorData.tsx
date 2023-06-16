@@ -13,15 +13,23 @@ import {
 import { fetchIndicatorByCountryData } from '../../../../../utils/dataSource'
 import Loader from '../../../../../components/Loader'
 
-export default function IndicatorData({ country, indicator }) {
+export default function IndicatorData({
+	country,
+	indicator,
+}: {
+	country: Country
+	indicator: Indicator
+}) {
 	const [loading, setLoading] = React.useState(true)
-	const [data, setData] = React.useState(null)
+	const [data, setData] = React.useState<IndicatorData[] | []>([])
 
 	React.useEffect(() => {
-		fetchIndicatorByCountryData(country.iso2Code, indicator.id).then((data) => {
-			setLoading(false)
-			setData(data)
-		})
+		fetchIndicatorByCountryData(country.iso2Code, indicator.id).then(
+			(data: IndicatorData[]) => {
+				setLoading(false)
+				setData(data)
+			},
+		)
 	}, [])
 
 	let content = null

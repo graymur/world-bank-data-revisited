@@ -1,1 +1,1 @@
-export default () => new Date().getFullYear() - 1
+export default (): number => new Date().getFullYear() - 1

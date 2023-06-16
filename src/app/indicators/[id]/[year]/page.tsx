@@ -1,6 +1,6 @@
 import { fetchIndicator } from '../../../../utils/dataSource'
-import YearsSelect from './YearsSelect.tsx'
-import IndicatorData from './IndicatorData.tsx'
+import YearsSelect from './YearsSelect'
+import IndicatorData from './IndicatorData'
 
 type IndicatorProps = {
 	params: { id: string; year: string }

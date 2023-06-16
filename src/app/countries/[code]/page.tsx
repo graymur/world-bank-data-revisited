@@ -1,7 +1,7 @@
 import { fetchCountry, fetchIndicators } from '../../../utils/dataSource'
 import Link from 'next/link'
 
-export default async function Country({ params }) {
+export default async function Country({ params }: { params: { code: string } }) {
 	const country = await fetchCountry(params.code)
 	const indicators = await fetchIndicators()
 

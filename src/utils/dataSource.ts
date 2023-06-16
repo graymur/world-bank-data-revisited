@@ -3,28 +3,6 @@ import aggregatedRegionsISOCodes from './data/aggregatedRegionsISOCodes.json'
 
 const urlBase = 'https://api.worldbank.org/v2'
 
-type Country = {
-	id: string
-	name: string
-	iso2code: string
-	iso2Code: string
-	capitalCity: string
-	region: {
-		value: string
-		iso2code: string
-	}
-	incomeLevel: {
-		value: string
-	}
-}
-
-type Indicator = {
-	id: string
-	name: string
-	sourceNote: string
-	sourceOrganization: string
-}
-
 async function fetchJson(url: string) {
 	const response = await fetch(url)
 	return response.json()
@@ -73,25 +51,33 @@ export async function fetchIndicator(id: string): Promise<Indicator> {
 export async function fetchIndicatorByCountryData(
 	iso2Code: string,
 	indicatorId: string,
-) {
+): Promise<IndicatorData[]> {
 	const result = await fetchJson(
 		`${urlBase}/countries/${iso2Code}/indicators/${indicatorId}?format=json`,
 	)
-	return (result[1] || []).map((x) => ({ date: x.date, value: x.value }))
+
+	return (result[1] || []).map((x: IndicatorData) => ({
+		date: x.date,
+		value: x.value,
+	}))
 }
 
-export async function fetchIndicatorDataByYear(indicatorId, year) {
+export async function fetchIndicatorDataByYear(
+	indicatorId: string,
+	year: string,
+): Promise<IndicatorData[]> {
 	const result = await fetchJson(
 		`${urlBase}/countries/all/indicators/${indicatorId}?date=${year}:${year}&per_page=1000&format=json`,
 	)
 
 	return (result[1] || [])
 		.filter(
-			(x) => !aggregatedRegionsISOCodes.includes(x.country.id) && x.value !== null,
+			(x: any) =>
+				!aggregatedRegionsISOCodes.includes(x.country.id) && x.value !== null,
 		)
-		.sort((a, b) => (a.country.value > b.country.value ? -1 : 1))
-		.sort((a, b) => (a.value > b.value ? -1 : 1))
-		.map((x) => ({ name: x.country.value, value: x.value }))
+		.sort((a: any, b: any) => (a.country.value > b.country.value ? -1 : 1))
+		.sort((a: any, b: any) => (a.value > b.value ? -1 : 1))
+		.map((x: any) => ({ name: x.country.value, value: x.value }))
 }
 
 // export const searchIndicators = async (pattern) => {
@@ -100,10 +86,10 @@ export async function fetchIndicatorDataByYear(indicatorId, year) {
 // 	return result.map((x) => x.data).sort((a, b) => (a.name > b.name ? 1 : -1))
 // }
 
-export async function fetchIndicatorsFromWB(limit) {
-	const result = await fetchJson(
-		`${urlBase}/indicators?per_page=${limit}&format=json`,
-	)
-
-	return result[1]
-}
+// export async function fetchIndicatorsFromWB(limit) {
+// 	const result = await fetchJson(
+// 		`${urlBase}/indicators?per_page=${limit}&format=json`,
+// 	)
+//
+// 	return result[1]
+// }

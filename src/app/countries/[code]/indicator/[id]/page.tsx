@@ -2,7 +2,11 @@ import { fetchIndicator, fetchCountry } from '../../../../../utils/dataSource'
 import CountryIndicators from '../../page'
 import IndicatorData from './IndicatorData'
 
-export default async function CountryIndicator({ params }) {
+export default async function CountryIndicator({
+	params,
+}: {
+	params: { id: string; code: string }
+}) {
 	const indicator = await fetchIndicator(params.id)
 	const country = await fetchCountry(params.code)
 

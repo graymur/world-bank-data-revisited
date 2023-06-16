@@ -5,7 +5,11 @@ import Link from 'next/link'
 import getMaxIndicatorYear from '../../utils/getMaxIndicatorYear'
 import IndicatorsSearch from './IndicatorsSearch'
 
-export default function IndicatorsList({ mainIdicators }) {
+export default function IndicatorsList({
+	mainIdicators,
+}: {
+	mainIdicators: Indicator[]
+}) {
 	const [indicators, setIndicators] = React.useState(mainIdicators)
 	const [foundIndicators, setFoundIndicators] = React.useState([])
 	const hasFoundIndicators = Boolean(foundIndicators.length)
