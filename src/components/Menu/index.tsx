@@ -1,20 +1,34 @@
+import Link from 'next/link'
+
 export default function Menu() {
 	return (
 		<ul className="flex mb-5">
 			<li className="mr-6">
-				<a className="text-blue-500 hover:text-blue-800" href="/">
+				<Link
+					prefetch={false}
+					className="text-blue-500 hover:text-blue-800"
+					href="/"
+				>
 					Main page
-				</a>
+				</Link>
 			</li>
 			<li className="mr-6">
-				<a className="text-blue-500 hover:text-blue-800" href="/countries">
+				<Link
+					prefetch={false}
+					className="text-blue-500 hover:text-blue-800"
+					href="/countries"
+				>
 					Countries
-				</a>
+				</Link>
 			</li>
 			<li className="mr-6">
-				<a className="text-blue-500 hover:text-blue-800" href="/indicators">
+				<Link
+					prefetch={false}
+					className="text-blue-500 hover:text-blue-800"
+					href="/indicators"
+				>
 					Indicators
-				</a>
+				</Link>
 			</li>
 		</ul>
 	)

@@ -43,7 +43,7 @@ export default function IndicatorData({
 
 		content = (
 			<>
-				<div className="indicator-chart__info">
+				<div className="mb-7">
 					<h3 className="text-2xl mb-3">{indicator.name}</h3>
 					<p className="mb-3">{indicator.sourceNote}</p>
 					{indicator.sourceOrganization && (
@@ -52,14 +52,16 @@ export default function IndicatorData({
 				</div>
 				{!nonEmptyValues.length && <h1>No data for this country</h1>}
 				{Boolean(nonEmptyValues.length) && (
-					<ResponsiveContainer>
-						<LineChart height={300} data={nonEmptyValues.reverse()}>
-							<Line type="monotone" dataKey="value" stroke="#8884d8" />
-							<CartesianGrid stroke="#ccc" />
-							<XAxis dataKey="date" />
-							<YAxis />
-						</LineChart>
-					</ResponsiveContainer>
+					<div style={{ height: '300px' }} className="pr-5 pl-3">
+						<ResponsiveContainer width="100%" height="100%">
+							<LineChart data={nonEmptyValues.reverse()}>
+								<CartesianGrid stroke="#ccc" />
+								<XAxis dataKey="date" />
+								<YAxis />
+								<Line type="monotone" dataKey="value" stroke="#8884d8" />
+							</LineChart>
+						</ResponsiveContainer>
+					</div>
 				)}
 			</>
 		)
