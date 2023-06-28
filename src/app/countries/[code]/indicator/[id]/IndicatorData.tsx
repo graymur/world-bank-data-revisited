@@ -24,6 +24,8 @@ export default function IndicatorData({
 	const [data, setData] = React.useState<IndicatorData[] | []>([])
 
 	React.useEffect(() => {
+		setLoading(true)
+
 		fetchIndicatorByCountryData(country.iso2Code, indicator.id).then(
 			(data: IndicatorData[]) => {
 				setLoading(false)

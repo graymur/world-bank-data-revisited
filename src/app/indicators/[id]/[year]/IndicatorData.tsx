@@ -25,6 +25,8 @@ export default function IndicatorData({
 	const [data, setData] = React.useState<IndicatorData[] | []>([])
 
 	React.useEffect(() => {
+		setLoading(true)
+
 		fetchIndicatorDataByYear(indicator.id, year).then((data) => {
 			setLoading(false)
 			setData(data)
