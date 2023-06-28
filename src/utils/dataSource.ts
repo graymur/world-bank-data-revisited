@@ -86,10 +86,11 @@ export async function fetchIndicatorDataByYear(
 // 	return result.map((x) => x.data).sort((a, b) => (a.name > b.name ? 1 : -1))
 // }
 
-// export async function fetchIndicatorsFromWB(limit) {
-// 	const result = await fetchJson(
-// 		`${urlBase}/indicators?per_page=${limit}&format=json`,
-// 	)
-//
-// 	return result[1]
-// }
+export async function fetchIndicatorsFromWB(limit = 2500) {
+	console.log('URL', `${urlBase}/indicators?per_page=${limit}&format=json`)
+	const result = await fetchJson(
+		`${urlBase}/indicators?per_page=${limit}&format=json`,
+	)
+
+	return result[1]
+}

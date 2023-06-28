@@ -10,16 +10,17 @@ export default function IndicatorsList({
 }: {
 	mainIdicators: Indicator[]
 }) {
-	const [indicators, setIndicators] = React.useState(mainIdicators)
-	const [foundIndicators, setFoundIndicators] = React.useState([])
-	const hasFoundIndicators = Boolean(foundIndicators.length)
+	const [foundIndicators, setFoundIndicators] = React.useState<Indicator[] | null>(
+		null,
+	)
+	const hasFoundIndicators = Boolean(foundIndicators && foundIndicators.length)
 
 	return (
 		<>
-			{hasFoundIndicators && <h3 className="indicators__title">Main indicators</h3>}
-			<IndicatorsSearch setIndicators={setIndicators} />
+			<IndicatorsSearch setIndicators={setFoundIndicators} />
+			{!hasFoundIndicators && <h3 className="text-2xl mb-3">Main indicators</h3>}
 			<nav className="grid grid-cols-3 gap-2">
-				{indicators.map((indicator) => (
+				{(foundIndicators || mainIdicators).map((indicator) => (
 					<Link
 						prefetch={false}
 						key={indicator.id}

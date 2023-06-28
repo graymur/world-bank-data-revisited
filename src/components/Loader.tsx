@@ -1,9 +1,6 @@
-export default function Loader() {
+export function Loader() {
 	return (
-		<div
-			role="status"
-			style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}
-		>
+		<div>
 			<svg
 				aria-hidden="true"
 				className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -21,6 +18,17 @@ export default function Loader() {
 				/>
 			</svg>
 			<span className="sr-only">Loading...</span>
+		</div>
+	)
+}
+
+export default function WrappedLoader() {
+	return (
+		<div
+			role="status"
+			style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}
+		>
+			<Loader />
 		</div>
 	)
 }
